@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import PropTypes from 'prop-types'
 
 function Application() {
     const [taskList, setTasks] = useState([]);
@@ -74,7 +73,5 @@ function Application() {
         </div>
     )
 }
-
-Application.propTypes = {}
 
 export default Application;

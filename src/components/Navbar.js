@@ -15,7 +15,7 @@ function Navbar(props) {
     }
     return (
         <nav>
-            <a href="">
+            <a href="https://github.com/satvikpopli/todo/">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     xmlnsXlink="http://www.w3.org/1999/xlink"
