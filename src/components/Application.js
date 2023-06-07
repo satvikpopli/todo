@@ -48,8 +48,7 @@ function Application() {
         setTasks([...taskList]);
     }
 
-    const doNothing = () => {
-    }
+    const doNothing = () => {}
 
     return (
         <div className="container">
