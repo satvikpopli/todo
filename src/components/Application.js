@@ -48,8 +48,6 @@ function Application() {
         setTasks([...taskList]);
     }
 
-    const doNothing = () => {}
-
     return (
         <div className="container">
             <form className="form">
@@ -61,7 +59,7 @@ function Application() {
                 {taskList.map((task, index) => (
                     <div className="task" key={index}>
                         <div onClick={toggleStatus}>
-                            <input type="checkbox" className="option-input checkbox" onChange={doNothing} checked={task.done} />
+                            <input type="checkbox" className="option-input checkbox" onChange={()=>{}} checked={task.done} />
                             <label style={task.done ? { textDecoration: 'line-through', color: 'var(--dark-75)' } : {}}>
                                 {task.taskItem}
                             </label>
