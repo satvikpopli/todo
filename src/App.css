@@ -1,0 +1,425 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: "Indie Flower";
+}
+
+html[data-theme='light'] {
+  --light: rgb(255, 255, 255);
+  --dark: rgb(0, 0, 0);
+  --light-bg: rgb(236, 240, 241);
+  --light-80: rgba(255, 255, 255, 0.80);
+  --light-65: rgba(255, 255, 255, 0.65);
+  --dark-65: rgba(0, 0, 0, 0.8);
+  --dark-75: rgba(0, 0, 0, 0.75);
+  --dark-50: rgba(0, 0, 0, 0.5);
+}
+
+html[data-theme='dark'] {
+  --light: rgb(0, 0, 0);
+  --dark: rgb(255, 255, 255);
+  --light-bg: rgb(19, 15, 14);
+  --light-80: rgba(0, 0, 0, 0.80);
+  --light-65: rgba(0, 0, 0, 0.65);
+  --dark-65: rgba(255, 255, 255, 0.65);
+  --dark-75: rgba(255, 255, 255, 0.75);
+  --dark-50: rgba(255, 255, 255, 0.5);
+}
+
+body {
+  background-color: var(--light-bg);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 15vh;
+  padding: 2rem;
+}
+
+nav h1 {
+  color: var(--dark);
+  font-size: 4rem;
+}
+
+nav .github {
+  height: 3rem;
+  width: 3rem;
+  transition: all 100ms ease-in-out;
+}
+
+nav .github:hover {
+  transform: scale(1.1);
+}
+
+nav button {
+  color: var(--dark);
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: var(--light);
+  border: 2px solid var(--dark);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* DARK MODE SWITCH */
+body.switching * {
+  transition: all 0.2s;
+}
+
+body.dark {
+  background-color: #202020;
+}
+
+body.dark h1 {
+  color: #fafafa;
+}
+
+body.dark .dark-mode-switch .bg {
+  border-color: #202020;
+}
+
+.dark-mode-switch {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: 40px;
+  cursor: pointer;
+  transform: scale(0.35);
+}
+
+.dark-mode-switch:hover .circle {
+  margin-left: 15px;
+  margin-top: -95px;
+}
+
+.dark-mode-switch .inner {
+  width: 80px;
+  height: 80px;
+  border-radius: 40px;
+  overflow: hidden;
+}
+
+.dark-mode-switch .bg {
+  width: 80px;
+  height: 80px;
+  background-color: #202020;
+  border: 1px solid #f0f0f0;
+  border-radius: 40px;
+  transition: all 0s;
+}
+
+.dark-mode-switch .circle {
+  margin-left: 20px;
+  margin-top: -100px;
+  width: 80px;
+  height: 80px;
+  background-color: #f0f0f0;
+  border: 2px solid transparent;
+  border-radius: 40px;
+  transition: all 0.2s;
+}
+
+.dark-mode-switch .rays {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.dark-mode-switch .rays .ray {
+  position: absolute;
+  left: 38px;
+  top: 40px;
+  width: 6px;
+  height: 12px;
+  background-color: #fbc02d;
+  transform-origin: 2px 0;
+  opacity: 0;
+}
+
+.dark-mode-switch .rays .ray:nth-child(1) {
+  transform: rotate(-180deg) translateY(40px);
+  transition: all 0.1s;
+}
+
+.dark-mode-switch .rays .ray:nth-child(2) {
+  transform: rotate(-225deg) translateY(40px);
+  transition: all 0.1s;
+}
+
+.dark-mode-switch .rays .ray:nth-child(3) {
+  transform: rotate(-270deg) translateY(40px);
+  transition: all 0.1s;
+}
+
+.dark-mode-switch .rays .ray:nth-child(4) {
+  transform: rotate(-315deg) translateY(40px);
+  transition: all 0.1s;
+}
+
+.dark-mode-switch .rays .ray:nth-child(5) {
+  transform: rotate(-360deg) translateY(40px);
+  transition: all 0.1s;
+}
+
+.dark-mode-switch .rays .ray:nth-child(6) {
+  transform: rotate(-405deg) translateY(40px);
+  transition: all 0.1s;
+}
+
+.dark-mode-switch .rays .ray:nth-child(7) {
+  transform: rotate(-450deg) translateY(40px);
+  transition: all 0.1s;
+}
+
+.dark-mode-switch .rays .ray:nth-child(8) {
+  transform: rotate(-495deg) translateY(40px);
+  transition: all 0.1s;
+}
+
+.dark-mode-switch.dark:hover .rays .ray:nth-child(1) {
+  transform: rotate(-180deg) translateY(52px);
+}
+
+.dark-mode-switch.dark:hover .rays .ray:nth-child(2) {
+  transform: rotate(-225deg) translateY(52px);
+}
+
+.dark-mode-switch.dark:hover .rays .ray:nth-child(3) {
+  transform: rotate(-270deg) translateY(52px);
+}
+
+.dark-mode-switch.dark:hover .rays .ray:nth-child(4) {
+  transform: rotate(-315deg) translateY(52px);
+}
+
+.dark-mode-switch.dark:hover .rays .ray:nth-child(5) {
+  transform: rotate(-360deg) translateY(52px);
+}
+
+.dark-mode-switch.dark:hover .rays .ray:nth-child(6) {
+  transform: rotate(-405deg) translateY(52px);
+}
+
+.dark-mode-switch.dark:hover .rays .ray:nth-child(7) {
+  transform: rotate(-450deg) translateY(52px);
+}
+
+.dark-mode-switch.dark:hover .rays .ray:nth-child(8) {
+  transform: rotate(-495deg) translateY(52px);
+}
+
+.dark-mode-switch.dark .circle {
+  margin-left: 0;
+  margin-top: -80px;
+  background-color: #fbc02d;
+  border-color: #f9a825;
+}
+
+.dark-mode-switch.dark .rays .ray {
+  opacity: 1;
+}
+
+.dark-mode-switch.dark .rays .ray:nth-child(1) {
+  transform: rotate(-180deg) translateY(48px);
+  transition: all 0.4s;
+}
+
+.dark-mode-switch.dark .rays .ray:nth-child(2) {
+  transform: rotate(-225deg) translateY(48px);
+  transition: all 0.6s;
+}
+
+.dark-mode-switch.dark .rays .ray:nth-child(3) {
+  transform: rotate(-270deg) translateY(48px);
+  transition: all 0.8s;
+}
+
+.dark-mode-switch.dark .rays .ray:nth-child(4) {
+  transform: rotate(-315deg) translateY(48px);
+  transition: all 1s;
+}
+
+.dark-mode-switch.dark .rays .ray:nth-child(5) {
+  transform: rotate(-360deg) translateY(48px);
+  transition: all 1.2s;
+}
+
+.dark-mode-switch.dark .rays .ray:nth-child(6) {
+  transform: rotate(-405deg) translateY(48px);
+  transition: all 1.4s;
+}
+
+.dark-mode-switch.dark .rays .ray:nth-child(7) {
+  transform: rotate(-450deg) translateY(48px);
+  transition: all 1.6s;
+}
+
+.dark-mode-switch.dark .rays .ray:nth-child(8) {
+  transform: rotate(-495deg) translateY(48px);
+  transition: all 1.8s;
+}
+
+.container {
+  color: var(--dark);
+  margin: 3rem auto;
+  width: 50%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form label {
+  padding-left: 1rem;
+  font-size: 2rem;
+  letter-spacing: 5px;
+  font-weight: bold;
+}
+
+.form input {
+  font-size: 1.5rem;
+  padding: 0.75rem 1.25rem;
+  border: none;
+  color: var(--light);
+  background-color: var(--dark-65);
+  letter-spacing: 2px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-family: "Indie Flower";
+}
+
+.form input:focus {
+  outline: none;
+}
+
+.form input[type='submit'] {
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: 1rem;
+  padding: 0.5rem 1rem;
+  color: var(--light);
+  background-color: var(--dark);
+  font-size: 1.25rem;
+  border-radius: 1em;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-family: "Indie Flower";
+  font-weight: bold;
+  width: max-content;
+  transition: all 150ms ease-in-out;
+}
+
+.form input[type='submit']:hover {
+  transform: scale(1.05);
+}
+
+.tasks {
+  margin-top: 3rem;
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.tasks .task {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.task div {
+  display: flex;
+  gap: 1.5rem;
+  cursor: pointer;
+}
+
+.task div:hover .option-input {
+  background: var(--dark-50);
+}
+
+.btns button {
+  color: var(--dark);
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: var(--light);
+  border: 2px solid var(--dark);
+  border-radius: 10px;
+  transition: all 100ms ease-in-out;
+  cursor: pointer;
+  user-select: none;
+}
+
+.btns button:hover {
+  transform: scale(1.025);
+}
+
+.tasks label {
+  font-weight: bold;
+  display: block;
+  line-height: 40px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.option-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  height: 40px;
+  width: 40px;
+  transition: all 100ms ease-in-out;
+  background: #cbd1d8;
+  border: none;
+  color: var(--light-80);
+  cursor: pointer;
+  display: inline-block;
+  outline: none;
+  position: relative;
+  z-index: 1000;
+  border-radius: 50%;
+  cursor: pointer;
+  user-select: none;
+}
+
+.option-input:hover {
+  background: var(--dark-50);
+}
+
+.option-input:checked {
+  background: var(--dark-50);
+}
+
+.option-input:checked::before {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  content: '\f00c';
+  font-size: 25px;
+  font-weight: bold;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Font Awesome 5 Free';
+}
+
+.option-input:checked::after {
+  background: var(--light);
+  content: '';
+  display: block;
+  position: relative;
+  z-index: 100;
+}
