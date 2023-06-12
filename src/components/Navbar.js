@@ -2,17 +2,27 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 
 function Navbar(props) {
-    const [mode, setMode] = useState('dark');
+    const [mode, setMode] = useState('light');
     const toggleMode = () => {
-        if (mode === "light") {
+        if (mode === 'light') {
+            localStorage.setItem('theme', 'dark');
             document.documentElement.setAttribute("data-theme", "dark");
             setMode('dark');
-        }
-        else {
+        } else {
+            localStorage.setItem('theme', 'light');
             document.documentElement.setAttribute("data-theme", "light");
             setMode('light');
         }
     }
+    const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+    if (currentTheme && currentTheme !== mode) {
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        setMode(currentTheme);
+    } else {
+        localStorage.setItem('theme', mode);
+        document.documentElement.setAttribute('data-theme', mode);
+    }
+
     return (
         <nav>
             <a href="https://github.com/satvikpopli/todo/">

@@ -303,7 +303,7 @@ body.dark .dark-mode-switch .bg {
   outline: none;
 }
 
-.form input[type='submit'] {
+.form button {
   margin-top: 1rem;
   margin-left: auto;
   margin-right: 1rem;
@@ -336,6 +336,7 @@ body.dark .dark-mode-switch .bg {
 .tasks .task {
   display: flex;
   justify-content: space-between;
+  gap: 3rem;
   margin-bottom: 1.5rem;
 }
 
@@ -365,12 +366,27 @@ body.dark .dark-mode-switch .bg {
   transform: scale(1.025);
 }
 
-.tasks label {
+.tasks input[type=text] {
+  padding: 0.25rem 0.5rem;
+  border-radius: 10px;
+  background-color: var(--dark-50);
+  outline: none;
+  border: none;
+  color: var(--dark);
+  font-family: "Indie Flower";
+  font-size: 2rem;
   font-weight: bold;
   display: block;
   line-height: 40px;
+}
+
+.tasks input[type=text]::selection{
+  background-color: transparent;
+}
+
+.tasks input[type=text]:disabled{
+  background-color: transparent;
   cursor: pointer;
-  user-select: none;
 }
 
 .option-input {
@@ -401,6 +417,11 @@ body.dark .dark-mode-switch .bg {
 
 .option-input:checked {
   background: var(--dark-50);
+}
+
+.option-input:checked + input {
+  text-decoration: line-through;
+  color: var(--dark-75);
 }
 
 .option-input:checked::before {
